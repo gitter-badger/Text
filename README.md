@@ -1,2 +1,2 @@
 #Text
-Text to Array manager
+Text to Array
