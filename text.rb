@@ -1,5 +1,4 @@
-def create
-path = File.expand_path File.dirname(__FILE__)
+def create(path)
 print "Username:"
 usr = gets.chomp
 print "Password:"
@@ -9,8 +8,7 @@ savef.print(usr + ',' + pwd + ',')
 savef.close
 puts "file created" 
 end
-def read
-path = File.expand_path File.dirname(__FILE__)
+def read(path)
 text = File.open(path + '/text.txt', "rb") 
 contents = text.read.split(",")
 nxt = "y"
@@ -25,12 +23,13 @@ u += 2
 p += 2
 end
 end
+path = File.expand_path File.dirname(__FILE__)
 print "Create or Read (c or r):"
 opt = gets.chomp.downcase
 if opt === "c"
-create()
+create(path)
 elsif opt === "r"
-read()
+read(path)
 else
 puts "invalid option"
 end
