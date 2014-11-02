@@ -17,11 +17,11 @@ def findusr(usr)
 path = File.expand_path File.dirname(__FILE__)
 userid = File.open(path + '/users.txt', "rb") 
 userid = userid.read.split(",")
-puts "Bot Id:#{userid.index(usr)}"
 ids = File.open(path + '/ids.txt', "rb") 
 users = File.open(path + '/users.txt', "rb") 
 ids = ids.read.split(",")
 users = users.read.split(",")
+puts "Bot Id:#{userid.index(usr)}"
 puts "Username:#{users[userid.index(usr).to_i]}"
 puts "Xat Id:#{ids[userid.index(usr).to_i]}"
 end
