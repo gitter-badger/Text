@@ -1,2 +1,2 @@
 #Text
-Text to Array
+Xat ID, and username

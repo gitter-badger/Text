@@ -1,35 +1,22 @@
-def create(path)
-print "Username:"
-usr = gets.chomp
-print "Password:"
-pwd = gets.chomp
-savef = File.new(path + '/text.txt', "a+")
-savef.print(usr + ',' + pwd + ',')
-savef.close
-puts "file created" 
-end
-def read(path)
-text = File.open(path + '/text.txt', "rb") 
-contents = text.read.split(",")
-nxt = "y"
-u = 0
-p = 1
-while nxt === "y"
-puts "Username: #{contents[u]}"
-puts "Password: #{contents[p]}"
-print "Read Next?(y or n):"
-nxt = gets.chomp
-u += 2
-p += 2
-end
-end
+require 'open-uri'
+def userid(usr)
 path = File.expand_path File.dirname(__FILE__)
-print "Create or Read (c or r):"
-opt = gets.chomp.downcase
-if opt === "c"
-create(path)
-elsif opt === "r"
-read(path)
-else
-puts "invalid option"
+source = open('http://xat.me/' + usr).read
+source = source.match(/\?id\=(.*)\"\>Inappropriate\<\/A\>/m)[1].strip
+uid = source.match(/(.*)\&UserName/m)[1].strip
+savef = File.new(path + '/users.txt', "a+")
+savef.print("#{usr},")
+savei = File.new(path + '/ids.txt', "a+")
+savei.print("#{uid},")
+savef.close
+savei.close
+ids = File.open(path + '/ids.txt', "rb") 
+users = File.open(path + '/users.txt', "rb") 
+ids = ids.read.split(",")
+users = users.read.split(",")
+print "Bot File ID:"
+bfid = gets.chomp.to_i
+puts users[bfid]
+puts ids[bfid]
 end
+userid('pokemon')
