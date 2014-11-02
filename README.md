@@ -1,2 +1,2 @@
 #Text
-Xat ID, and username
+Xat User Id and String Manager
