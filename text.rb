@@ -1,3 +1,5 @@
+#http://s792.photobucket.com/user/Shad549/media/ZoneHeader_zpsbd64a3b7.png.html
+#http://s792.photobucket.com/user/Shad549/media/ThanksgivingOuter_zps8ff0cad2.png.html
 #this is the user id grabber
 #it also gives a user their bot/array id/number
 #there are 2 methods, 1 which creates a user id stuff
